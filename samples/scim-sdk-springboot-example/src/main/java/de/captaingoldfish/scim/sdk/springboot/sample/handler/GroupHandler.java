@@ -53,7 +53,7 @@ public class GroupHandler extends ResourceHandler<Group>
       String name;
       while ((name = reader.readLine()) != null)
       {
-        String id = UUID.randomUUID().toString();
+        String id = name;
         Meta meta = Meta.builder().created(LocalDateTime.now()).lastModified(LocalDateTime.now()).build();
         inMemoryMap.put(id, Group.builder().id(id).displayName(name).meta(meta).build());
       }
