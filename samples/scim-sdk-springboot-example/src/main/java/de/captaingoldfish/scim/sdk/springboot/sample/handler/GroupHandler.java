@@ -70,7 +70,7 @@ public class GroupHandler extends ResourceHandler<Group>
   @Override
   public Group createResource(Group resource, Context context)
   {
-    final String groupId = UUID.randomUUID().toString();
+    final String groupId = resource.getDisplayName().get();
     if (inMemoryMap.containsKey(groupId))
     {
       throw new ConflictException("resource with id '" + groupId + "' does already exist");
